@@ -1,6 +1,16 @@
+import { useNavigate } from "react-router-dom";
 import PostForm from "../components/PostForm";
 
 export default function CreatePage({ editingPost, onCancelEdit, onSaved }) {
+  const nav = useNavigate();
+
+  function handleSaved(post) {
+   
+    onSaved?.(post);
+   
+    nav("/feed");
+  }
+
   return (
     <div className="page">
       <div className="pageHead">
@@ -12,7 +22,7 @@ export default function CreatePage({ editingPost, onCancelEdit, onSaved }) {
         <PostForm
           editingPost={editingPost}
           onCancelEdit={onCancelEdit}
-          onSaved={onSaved}
+          onSaved={handleSaved}
         />
       </div>
     </div>
