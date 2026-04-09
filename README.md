@@ -1,16 +1,25 @@
-# React + Vite
+CampusFind is an offline-first Lost & Found Progressive Web App (PWA) for campus use. Users can create lost/found posts with optional photo and location, browse the feed, and manage their own posts. All data is stored locally on the device using IndexedDB (via Dexie).
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- GitHub repo: https://github.com/ChangYueyu/campusfind
+- Live (Vercel): https://campusfind-eight.vercel.app/
 
-Currently, two official plugins are available:
+- Create Lost/Found posts (type, category, title, description, time)
+- Optional photo upload (stored locally with the post)
+- Optional geolocation capture (save latitude/longitude)
+- Feed filtering (type/category/keyword) and distance-based browsing (optional)
+- Manage posts: edit / mark returned / delete
+- Local persistence: posts remain after refresh and can be viewed offline (after first load)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React + Vite
+- React Router (SPA navigation)
+- Dexie (IndexedDB) for on-device persistent storage
+- Vite PWA plugin (Web App Manifest + Service Worker)
+- Deployment: Vercel (HTTPS)
 
-## React Compiler
+- Node.js (LTS recommended) + npm
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+git clone https://github.com/ChangYueyu/campusfind.git
+cd campusfind
+npm install
+npm run dev
